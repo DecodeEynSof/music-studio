@@ -1,21 +1,148 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Музыкальная студия</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Музыкальная студия Нейронные связи</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url('emblems/cosmos.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2cm;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch;
+            gap: 40px;
+            max-width: 2000px;
+            width: 100%;
+        }
+
+        /* Блок ссылок — без фона */
+        .links {
+            flex: 1.2;
+            padding: 20px 0;
+        }
+
+        .links ul {
+            list-style: none;
+        }
+
+        .links li {
+            margin: 25px 0;
+        }
+
+        .links a {
+            color: #000000;
+            text-decoration: none;
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            text-shadow: 1px 1px 0px #ffdd99, 0 0 12px #ffcc33, 0 0 20px rgba(255,200,50,0.6);
+            transition: 0.2s;
+            display: inline-block;
+        }
+
+        .links a:hover {
+            color: #ffcc66;
+            transform: translateX(8px);
+            text-shadow: 0 0 8px #ffaa44;
+        }
+
+        /* Центральная эмблема */
+        .emblem-top {
+            flex: 1.6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .emblem-top img {
+            width: 100%;
+            max-width: 1000px;
+            height: auto;
+            display: block;
+        }
+
+        /* Правая эмблема */
+        .emblem-bottom {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .emblem-bottom img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            display: block;
+        }
+
+        @media (max-width: 800px) {
+            body {
+                padding: 1cm;
+            }
+            .flex-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
+            .links, .emblem-top, .emblem-bottom {
+                width: 100%;
+                text-align: center;
+            }
+            .links a {
+                font-size: 1.1rem;
+            }
+            .emblem-bottom img {
+                max-width: 180px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Школа музыки и Творчества Марии Семьянской<br>НЕЙРОННЫЕ СВЯЗИ</h1>
+<div class="flex-container">
 
-    <ul>
-        <li><a href="biography.html">Биография Марии Алексеевны Семьянской</a></li>
-        <li><a href="school-history.html">История создания музыкальной школы</a></li>
-        <li><a href="svoya-versia.html">Уникальная учебная программа "Своя версия"</a></li>
-        <li><a href="clubs/">Направления школы</a> (пока заглушка)</li>
-        <li><a href="creative-workshop/">Творческая мастерская</a> (пока заглушка)</li>
-        <li><a href="concerts.html">НАША КОНЦЕРТНАЯ ДЕЯТЕЛЬНОСТЬ</a></li>
-        <li><a href="rent.html">Аренда помещения и оборудования</a></li>
-        <li><a href="contacts.html">Адрес и контакты</a></li>
-    </ul>
+    <div class="links">
+        <ul>
+            <li><a href="biography.html">Биография Марии Алексеевны Семьянской</a></li>
+            <li><a href="school-history.html">История создания музыкальной школы</a></li>
+            <li><a href="svoya-versia.html">Уникальная учебная программа "Своя версия"</a></li>
+            <li><a href="clubs/">Направления школы</a></li>
+            <li><a href="creative-workshop/">Творческая мастерская</a></li>
+            <li><a href="concerts.html">Наша концертная деятельность</a></li>
+            <li><a href="rent.html">Аренда помещения и оборудования</a></li>
+            <li><a href="contacts.html">Адрес и контакты</a></li>
+        </ul>
+    </div>
+
+    <div class="emblem-top">
+        <img src="emblems/emblem1.png" alt="Эмблема школы">
+    </div>
+
+    <div class="emblem-bottom">
+        <img src="emblems/emblem2.png" alt="Эмблема дополнительная">
+    </div>
+
+</div>
 </body>
 </html>

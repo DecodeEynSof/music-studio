@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дни рождения | Нейронные связи</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url('../emblems/cosmos.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            min-height: 100vh;
+            padding: 2cm;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: rgba(0,0,0,0.55);
+            backdrop-filter: blur(3px);
+            border-radius: 48px;
+            padding: 40px 50px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            text-shadow: 0 0 10px #ffcc66, 0 0 20px #ffaa44;
+        }
+
+        .carousel {
+            position: relative;
+            max-width: 800px;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 30px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            aspect-ratio: 16 / 9;
+            background: #000;
+        }
+
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease;
+            height: 100%;
+        }
+
+        .carousel-inner img {
+            width: 100%;
+            flex-shrink: 0;
+            object-fit: contain;
+            background: #000;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.6);
+            color: #ffcc66;
+            border: none;
+            font-size: 2rem;
+            padding: 10px 18px;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 2;
+            transition: 0.2s;
+        }
+
+        .carousel-btn:hover {
+            background: rgba(255,204,102,0.6);
+            color: black;
+        }
+
+        .prev {
+            left: 15px;
+        }
+
+        .next {
+            right: 15px;
+        }
+
+        .dots {
+            text-align: center;
+            margin: 15px 0;
+        }
+
+        .dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background: #ffcc66;
+            box-shadow: 0 0 6px #ffcc66;
+        }
+
+        .price-block {
+            background: rgba(0,0,0,0.4);
+            border-radius: 30px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: rgba(255,204,102,0.15);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: #ffcc66;
+            font-weight: bold;
+            border: 1px solid rgba(255,204,102,0.5);
+            transition: 0.2s;
+            margin-top: 15px;
+        }
+
+        .btn:hover {
+            background: rgba(255,204,102,0.3);
+            text-shadow: 0 0 6px #ffcc66;
+            transform: scale(1.02);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: #ffcc66;
+            text-decoration: none;
+            text-shadow: 0 0 4px #ffaa44;
+            font-size: 1.1rem;
+            transition: 0.2s;
+        }
+
+        .back-link:hover {
+            text-shadow: 0 0 12px #ffcc66;
+            transform: translateX(-4px);
+        }
+
+        .contact-block {
+            background: rgba(0,0,0,0.4);
+            border-radius: 30px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 700px) {
+            body {
+                padding: 1cm;
+            }
+            .container {
+                padding: 25px 20px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            .carousel-btn {
+                font-size: 1.4rem;
+                padding: 5px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🎂 Тематические дни рождения</h1>
+
+    <div class="carousel">
+        <div class="carousel-inner" id="carouselInner">
+            <!-- фото будут вставлены через JS -->
+        </div>
+        <button class="carousel-btn prev" id="prevBtn">❮</button>
+        <button class="carousel-btn next" id="nextBtn">❯</button>
+    </div>
+    <div class="dots" id="dotsContainer"></div>
+
+    <div class="price-block">
+        🎨 Тематические дни рождения с творческими или кулинарными мастер-классами.
+    </div>
+
+    <h2>📞 Контакты для записи и вопросов</h2>
+    <div class="contact-block">
+        📱 Телефон: <strong>+7 (916) 811-96-89</strong><br>
+        📱 Телефон: <strong>+7 (926) 233-13-94</strong><br>
+        💬 Написать / позвонить: <strong>MAX / Telegram</strong>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://t.me/Maria_Semyanskaya" class="btn" target="_blank">📝 Записаться</a>
+    </div>
+
+    <a href="../index.html" class="back-link">← На главную</a>
+</div>
+
+<script>
+    const images = [
+        "b1.jpg", "b2.jpg", "b3.jpg", "b4.jpg", "b5.jpg",
+        "b6.jpg", "b7.jpg", "b8.jpg", "b9.jpg", "b10.jpg",
+        "b11.jpg", "b12.jpg"
+    ];
+
+    let currentIndex = 0;
+    const carouselInner = document.getElementById("carouselInner");
+    const dotsContainer = document.getElementById("dotsContainer");
+
+    function loadCarousel() {
+        carouselInner.innerHTML = "";
+        dotsContainer.innerHTML = "";
+        images.forEach((img, index) => {
+            const imgElement = document.createElement("img");
+            imgElement.src = img;
+            carouselInner.appendChild(imgElement);
+
+            const dot = document.createElement("div");
+            dot.classList.add("dot");
+            if (index === 0) dot.classList.add("active");
+            dot.addEventListener("click", () => goToSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+        updateCarousel();
+    }
+
+    function updateCarousel() {
+        const width = carouselInner.clientWidth;
+        carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+        document.querySelectorAll(".dot").forEach((dot, idx) => {
+            if (idx === currentIndex) dot.classList.add("active");
+            else dot.classList.remove("active");
+        });
+    }
+
+    function goToSlide(index) {
+        currentIndex = index;
+        updateCarousel();
+    }
+
+    function nextSlide() {
+        if (currentIndex < images.length - 1) currentIndex++;
+        else currentIndex = 0;
+        updateCarousel();
+    }
+
+    function prevSlide() {
+        if (currentIndex > 0) currentIndex--;
+        else currentIndex = images.length - 1;
+        updateCarousel();
+    }
+
+    document.getElementById("nextBtn").addEventListener("click", nextSlide);
+    document.getElementById("prevBtn").addEventListener("click", prevSlide);
+    window.addEventListener("resize", updateCarousel);
+
+    loadCarousel();
+</script>
+
+</body>
+</html>

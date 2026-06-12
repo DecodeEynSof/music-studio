@@ -1,48 +1,143 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Контакты</title>
+    <title>Контакты | Нейронные связи</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url('emblems/cosmos.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            min-height: 100vh;
+            padding: 2cm;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(0,0,0,0.55);
+            backdrop-filter: blur(3px);
+            border-radius: 48px;
+            padding: 40px 50px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-align: center;
+            text-shadow: 0 0 10px #ffcc66, 0 0 20px #ffaa44;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin: 25px 0 15px 0;
+            padding-bottom: 5px;
+            border-bottom: 2px solid rgba(255,204,102,0.5);
+            text-shadow: 0 0 6px #ffcc66;
+        }
+
+        .info-block {
+            margin-bottom: 25px;
+            line-height: 1.6;
+            font-size: 1.2rem;
+        }
+
+        .info-block a {
+            color: #ffcc66;
+            text-decoration: none;
+            text-shadow: 0 0 4px #ffaa44;
+            transition: 0.2s;
+        }
+
+        .info-block a:hover {
+            color: #ffdd99;
+            text-shadow: 0 0 8px #ffcc66;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: #ffcc66;
+            text-decoration: none;
+            text-shadow: 0 0 4px #ffaa44;
+            font-size: 1.1rem;
+            transition: 0.2s;
+        }
+
+        .back-link:hover {
+            text-shadow: 0 0 12px #ffcc66;
+            transform: translateX(-4px);
+        }
+
+        @media (max-width: 700px) {
+            body {
+                padding: 1cm;
+            }
+            .container {
+                padding: 25px 20px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            h2 {
+                font-size: 1.4rem;
+            }
+            .info-block {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<h1>Контакты</h1>
+<div class="container">
+    <h1>📍 Адрес и контакты</h1>
 
-<p><strong>❗️ Обязательно предварительно напишите мне</strong><br>
-Я могу быть на занятиях.</p>
+    <h2>🏛️ Как нас найти</h2>
+    <div class="info-block">
+        <strong>НЕЙРОННЫЕ СВЯЗИ, корпус 100</strong><br>
+        Зеленоград, исторический центр (территория ДЕЙТОНА)<br>
+        Яндекс.Карты: <strong>«Нейронные связи корпус 100»</strong><br>
+        5 минут пешком от остановки «Первый Торговый»<br>
+        <br>
+        🚪 <strong>Подъезд:</strong> на домофоне набрать <strong>18916#</strong><br>
+        🏢 <strong>Этаж 4, направо.</strong> Раздевалка у офиса 408<br>
+        👋 Я встречаю вас на этаже.
+    </div>
 
-<hr>
+    <h2>📞 Связь для записи</h2>
+    <div class="info-block">
+        📱 Телефон: <a href="tel:+79168119689">+7 916 811-96-89</a> (Мария Алексеевна)<br>
+        💬 Telegram: <a href="https://t.me/Maria_Semyanskaya" target="_blank">@Maria_Semyanskaya</a><br>
+        📧 Email: <a href="mailto:semyanskaya@example.com">semyanskaya@example.com</a> (по необходимости)
+    </div>
 
-<h2>📞 Связь для записи на МК или занятия</h2>
-<ul>
-    <li><strong>Телефон:</strong> <a href="tel:+79168119689">+7 916 811-96-89</a> (Мария Алексеевна)</li>
-    <li><strong>Telegram:</strong> <a href="https://t.me/Maria_Semyanskaya" target="_blank">@Maria_Semyanskaya</a></li>
-</ul>
+    <h2>🧦 Перед визитом</h2>
+    <div class="info-block">
+        ❗️ <strong>Обязательно иметь сменную обувь</strong> (в помещение в уличной обуви нельзя).
+    </div>
 
-<hr>
+    <h2>📌 Коротко</h2>
+    <div class="info-block">
+        • Предварительно написать — обязательно<br>
+        • Код домофона: <strong>18916#</strong><br>
+        • Этаж 4, офис 408<br>
+        • Сменная обувь — строго
+    </div>
 
-<h2>🚗 Как доехать (на машине или такси)</h2>
-<ol>
-    <li>В Яндекс.Картах наберите: <strong>«НЕЙРОННЫЕ СВЯЗИ корпус 100»</strong></li>
-    <li>На подъезде — наша табличка.</li>
-    <li><strong>Этаж 4, направо.</strong> Раздевалка у офиса <strong>408</strong>.</li>
-    <li>На домофоне наберите код: <strong>18916#</strong></li>
-</ol>
-
-<p>Я встречаю вас на этаже.</p>
-
-<hr>
-
-<h2>🧦 С собой обязательно</h2>
-<p><strong>Сменная обувь!</strong><br>
-(в помещение в уличной обуви нельзя)</p>
-
-<hr>
-
-
-
-<br>
-<a href="index.html">← На главную</a>
+    <a href="index.html" class="back-link">← На главную</a>
+</div>
 
 </body>
 </html>

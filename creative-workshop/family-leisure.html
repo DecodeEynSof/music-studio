@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Семейный досуг | Нейронные связи</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url('../emblems/cosmos.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            min-height: 100vh;
+            padding: 2cm;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(0,0,0,0.55);
+            backdrop-filter: blur(3px);
+            border-radius: 48px;
+            padding: 40px 50px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            text-shadow: 0 0 10px #ffcc66, 0 0 20px #ffaa44;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            margin: 25px 0 15px 0;
+            padding-bottom: 5px;
+            border-bottom: 2px solid rgba(255,204,102,0.5);
+            text-shadow: 0 0 5px #ffcc66;
+        }
+
+        .video-block {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        video {
+            max-width: 100%;
+            border-radius: 30px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        .price-block {
+            background: rgba(0,0,0,0.4);
+            border-radius: 30px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,204,102,0.2);
+        }
+
+        .price-item:last-child {
+            border-bottom: none;
+        }
+
+        .price-name {
+            font-weight: bold;
+        }
+
+        .price-value {
+            color: #ffcc66;
+            font-weight: bold;
+        }
+
+        .btn {
+            display: inline-block;
+            background: rgba(255,204,102,0.15);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: #ffcc66;
+            font-weight: bold;
+            border: 1px solid rgba(255,204,102,0.5);
+            transition: 0.2s;
+            margin-top: 15px;
+        }
+
+        .btn:hover {
+            background: rgba(255,204,102,0.3);
+            text-shadow: 0 0 6px #ffcc66;
+            transform: scale(1.02);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: #ffcc66;
+            text-decoration: none;
+            text-shadow: 0 0 4px #ffaa44;
+            font-size: 1.1rem;
+            transition: 0.2s;
+        }
+
+        .back-link:hover {
+            text-shadow: 0 0 12px #ffcc66;
+            transform: translateX(-4px);
+        }
+
+        .contact-block {
+            background: rgba(0,0,0,0.4);
+            border-radius: 30px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 700px) {
+            body {
+                padding: 1cm;
+            }
+            .container {
+                padding: 25px 20px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            h2 {
+                font-size: 1.4rem;
+            }
+            .price-item {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>👨‍👩‍👧‍👦 Совместный досуг детей и родителей</h1>
+
+    <div class="video-block">
+        <video width="100%" controls autoplay muted loop>
+            <source src="f1.mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
+    </div>
+
+    <div class="price-block">
+        <div class="price-item">
+            <span class="price-name">Разовое занятие</span>
+            <span class="price-value">4000 ₽</span>
+        </div>
+    </div>
+
+    <h2>🎫 Семейный абонемент</h2>
+    <div class="price-block">
+        <div class="price-item">
+            <span class="price-name">Ребёнок + родитель — на 2 занятия</span>
+            <span class="price-value">7000 ₽ (3500 ₽ / занятие)</span>
+        </div>
+        <div class="price-item">
+            <span class="price-name">Ребёнок + родитель — на 4 занятия</span>
+            <span class="price-value">14 000 ₽</span>
+        </div>
+    </div>
+
+    <h2>📞 Контакты для записи и вопросов</h2>
+    <div class="contact-block">
+        📱 Телефон: <strong>+7 (916) 811-96-89</strong><br>
+        📱 Телефон: <strong>+7 (926) 233-13-94</strong><br>
+        💬 Написать / позвонить: <strong>MAX / Telegram</strong>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://t.me/Maria_Semyanskaya" class="btn" target="_blank">📝 Записаться</a>
+    </div>
+
+    <a href="../index.html" class="back-link">← На главную</a>
+</div>
+
+</body>
+</html>

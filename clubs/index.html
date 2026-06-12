@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Направления школы | Нейронные связи</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url('../emblems/cosmos.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2cm;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch;
+            gap: 60px;
+            max-width: 1600px;
+            width: 100%;
+        }
+
+        .links {
+            flex: 1.4;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .link-card {
+            background: rgba(0,0,0,0.55);
+            backdrop-filter: blur(4px);
+            border-radius: 36px;
+            padding: 25px 30px;
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            transition: 0.2s;
+        }
+
+        .link-card:hover {
+            transform: translateX(8px);
+            background: rgba(0,0,0,0.7);
+            border-color: rgba(255,204,102,0.5);
+        }
+
+        .link-card a {
+            color: #0d1f45;
+            text-decoration: none;
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 0px #ffdd99, 0 0 12px #ffcc33, 0 0 20px rgba(255,200,50,0.6);
+            transition: 0.2s;
+            display: block;
+        }
+
+        .link-card a:hover {
+            color: #ffcc66;
+            text-shadow: 0 0 8px #ffaa44;
+        }
+
+        .emblem-side {
+            flex: 1.2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: none;
+            backdrop-filter: none;
+            border: none;
+            box-shadow: none;
+            padding: 20px;
+        }
+
+        .emblem-side img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            filter: drop-shadow(0 0 20px #ffb6c1) drop-shadow(0 0 45px #ff9eb5);
+        }
+
+        @media (max-width: 900px) {
+            body {
+                padding: 1cm;
+            }
+            .flex-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+            }
+            .links, .emblem-side {
+                width: 100%;
+            }
+            .link-card a {
+                font-size: 1.5rem;
+            }
+            .emblem-side img {
+                max-width: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="flex-container">
+
+    <div class="links">
+        <div class="link-card">
+            <a href="violin.html">🎻 Клуб скрипачей</a>
+        </div>
+        <div class="link-card">
+            <a href="guitar.html">🎸 Клуб гитаристов</a>
+        </div>
+        <div class="link-card">
+            <a href="piano.html">🎹 Клуб пианистов</a>
+        </div>
+        <div class="link-card">
+            <a href="cello.html">🎵 Клуб виолончелистов</a>
+        </div>
+        <div class="link-card">
+            <a href="vocal.html">🎤 Вокал</a>
+        </div>
+        <div class="link-card">
+            <a href="english.html">🇬🇧 Английский клуб</a>
+        </div>
+    </div>
+
+    <div class="emblem-side">
+        <img src="../emblems/emblem6.png" alt="Эмблема направлений">
+    </div>
+
+</div>
+
+</body>
+</html>

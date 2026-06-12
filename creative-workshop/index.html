@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Творческая мастерская | Нейронные связи</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url('../emblems/cosmos.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2cm;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch;
+            gap: 60px;
+            max-width: 1600px;
+            width: 100%;
+        }
+
+        /* Блок ссылок — без общего фона, каждая кнопка со своим контейнером */
+        .links {
+            flex: 1.4;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .link-card {
+            background: rgba(0,0,0,0.55);
+            backdrop-filter: blur(4px);
+            border-radius: 36px;
+            padding: 25px 30px;
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            transition: 0.2s;
+        }
+
+        .link-card:hover {
+            transform: translateX(8px);
+            background: rgba(0,0,0,0.7);
+            border-color: rgba(255,204,102,0.5);
+        }
+
+        .link-card a {
+            color: #0d1f45;
+            text-decoration: none;
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 0px #ffdd99, 0 0 12px #ffcc33, 0 0 20px rgba(255,200,50,0.6);
+            transition: 0.2s;
+            display: block;
+        }
+
+        .link-card a:hover {
+            color: #ffcc66;
+            text-shadow: 0 0 8px #ffaa44;
+        }
+
+        /* Правая эмблема — растянута очень широко */
+        .emblem-side {
+            flex: 1.2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: none;
+            backdrop-filter: none;
+            border: none;
+            box-shadow: none;
+            padding: 20px;
+        }
+
+        .emblem-side img {
+            width: 100%;
+            max-width: 550px;
+            height: auto;
+            filter: drop-shadow(0 0 20px #ffb6c1) drop-shadow(0 0 45px #ff9eb5);
+        }
+
+        /* Адаптация под мобильные */
+        @media (max-width: 900px) {
+            body {
+                padding: 1cm;
+            }
+            .flex-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+            }
+            .links, .emblem-side {
+                width: 100%;
+            }
+            .link-card a {
+                font-size: 1.5rem;
+            }
+            .emblem-side img {
+                max-width: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="flex-container">
+
+    <!-- БЛОК ССЫЛОК — КАЖДАЯ КНОПКА В СВОЁМ ПОЛУПРОЗРАЧНОМ КОНТЕЙНЕРЕ -->
+    <div class="links">
+        <div class="link-card">
+            <a href="workshops.html">🎨 Мастер-классы</a>
+        </div>
+        <div class="link-card">
+            <a href="birthdays.html">🎂 Тематические дни рождения</a>
+        </div>
+        <div class="link-card">
+            <a href="family-leisure.html">👨‍👩‍👧‍👦 Совместный досуг детей и родителей</a>
+        </div>
+        <div class="link-card">
+            <a href="winter.html">❄️ Зимняя мастерская</a>
+        </div>
+        <div class="link-card">
+            <a href="summer-camp.html">☀️ Летний детский лагерь</a>
+        </div>
+    </div>
+
+    <!-- ПРАВАЯ ЭМБЛЕМА — РАСТЯНУТА ОЧЕНЬ ШИРОКО -->
+    <div class="emblem-side">
+        <img src="../emblems/emblem2.png" alt="Эмблема">
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Летний лагерь | Нейронные связи</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url('../emblems/cosmos.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            min-height: 100vh;
+            padding: 2cm;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: rgba(0,0,0,0.55);
+            backdrop-filter: blur(3px);
+            border-radius: 48px;
+            padding: 40px 50px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            text-shadow: 0 0 10px #ffcc66, 0 0 20px #ffaa44;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            margin: 25px 0 15px 0;
+            padding-bottom: 5px;
+            border-bottom: 2px solid rgba(255,204,102,0.5);
+            text-shadow: 0 0 5px #ffcc66;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            margin: 20px 0 10px 0;
+            color: #ffdd99;
+        }
+
+        .price-block {
+            background: rgba(0,0,0,0.4);
+            border-radius: 30px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 8px 0;
+        }
+
+        .price-name {
+            font-weight: bold;
+        }
+
+        .price-value {
+            color: #ffcc66;
+            font-weight: bold;
+        }
+
+        .date-list {
+            background: rgba(0,0,0,0.3);
+            border-radius: 20px;
+            padding: 15px 20px;
+            margin: 15px 0;
+        }
+
+        .date-list p {
+            padding: 5px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: rgba(255,204,102,0.15);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: #ffcc66;
+            font-weight: bold;
+            border: 1px solid rgba(255,204,102,0.5);
+            transition: 0.2s;
+            margin-top: 15px;
+        }
+
+        .btn:hover {
+            background: rgba(255,204,102,0.3);
+            text-shadow: 0 0 6px #ffcc66;
+            transform: scale(1.02);
+        }
+
+        .warning {
+            background: rgba(255,50,50,0.2);
+            border-left: 4px solid #ff8866;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: #ffcc66;
+            text-decoration: none;
+            text-shadow: 0 0 4px #ffaa44;
+            font-size: 1.1rem;
+            transition: 0.2s;
+        }
+
+        .back-link:hover {
+            text-shadow: 0 0 12px #ffcc66;
+            transform: translateX(-4px);
+        }
+
+        ul, .text-block {
+            margin: 15px 0;
+            padding-left: 20px;
+            line-height: 1.6;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        @media (max-width: 700px) {
+            body {
+                padding: 1cm;
+            }
+            .container {
+                padding: 25px 20px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            h2 {
+                font-size: 1.4rem;
+            }
+            .price-item {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>☀️ Летний детский лагерь творческого досуга</h1>
+
+    <div class="text-block">
+        Скоро лето! Понятно, что детям надо отдохнуть. Но если мы говорим про музыку или английский — это навык, который если не тренировать, забывается. Поэтому пишу вам первым. Своим.
+    </div>
+
+    <div class="text-block">
+        В этом году будет <strong>4 смены летнего досуга</strong> детей в помощь родителям.
+    </div>
+
+    <h2>🏕️ Творческая студия летнего досуга детей</h2>
+    <div style="text-align: center; font-size: 1.4rem; margin: 15px 0;">
+        «НЕЙРОННЫЕ СВЯЗИ»
+    </div>
+
+    <h2>⏰ Режим работы</h2>
+    <div class="text-block">
+        Понедельник – Пятница<br>
+        <strong>с 9:30 до 16:30</strong>
+    </div>
+
+    <h2>💰 Стоимость (всё включено)</h2>
+    <div class="price-block">
+        <div class="price-item">
+            <span class="price-name">1 день</span>
+            <span class="price-value">3 800 ₽</span>
+        </div>
+        <div class="price-item">
+            <span class="price-name">1 неделя (5 дней)</span>
+            <span class="price-value">19 000 ₽</span>
+        </div>
+        <div class="price-item">
+            <span class="price-name">2 недели</span>
+            <span class="price-value">35 000 ₽ (было 38 000 ₽)</span>
+        </div>
+    </div>
+    <div class="note" style="margin-top: -10px; font-style: italic;">🍽️ В стоимость входит: питание (кафе «NO DRAMA MAMA»), все материалы и расходники</div>
+
+    <h2>🎓 Педагоги и программа</h2>
+    <div class="text-block">
+        <strong>Вера Васильевна Богомолова</strong> — английский язык: разговорная практика, игры на свежем воздухе, постановка мини-спектакля с участием каждого ребёнка.<br><br>
+        <strong>Мария Алексеевна Семьянская</strong>, Заслуженная артистка Республики Марий Эл — музыкальные занятия: подбор по слуху, гитарный клуб, общий ансамбль, теория музыки через творчество, хор.
+    </div>
+
+    <h2>🎨 Общие занятия</h2>
+    <ul>
+        <li>Живопись (масло и шерстью)</li>
+        <li>Декор своими руками</li>
+        <li>Кулинарные мастер-классы</li>
+    </ul>
+
+    <h2>📅 Ежедневная программа</h2>
+    <ul>
+        <li><strong>10:00</strong> — прогулка, английский / музыка и активности на свежем воздухе. Тематическое чтение, интерактивная география, изучение культур разных стран. Тема дня определяет формат поделки и творческого задания.</li>
+        <li><strong>12:30</strong> — обед</li>
+        <li><strong>14:00</strong> — занятия в студии: репетиция / творческий или кулинарный мастер-класс / фильм</li>
+        <li><strong>16:30</strong> — провожаем детей</li>
+    </ul>
+
+    <h2>🎭 Каждая пятница</h2>
+    <div class="text-block">
+        Просмотр фильма или квартирник для родителей — дети показывают, чему научились на английском языке и музыке.
+    </div>
+
+    <h2>📆 Даты смен</h2>
+    <div class="date-list">
+        <p>1 смена: 08.06 — 20.06</p>
+        <p>2 смена: 22.06 — 03.07</p>
+        <p>3 смена: 06.07 — 17.07</p>
+        <p>4 смена: 20.07 — 31.07</p>
+    </div>
+
+    <div class="warning">
+        ❗️ <strong>Количество мест ограничено!</strong><br>
+        В каждой группе театральный английский и лето с музыкой — <strong>6–8 детей</strong><br>
+        Возраст: <strong>7–12 лет</strong>
+    </div>
+
+    <h2>🎒 Что взять с собой</h2>
+    <ul>
+        <li>Коврик-пенка (для занятий на улице)</li>
+        <li>Мини-рюкзак для воды и перекуса</li>
+        <li>Кепка или панамка от солнца</li>
+        <li>Солнцезащитный крем</li>
+    </ul>
+
+    <h2>📌 Правила творческой студии</h2>
+    <ul>
+        <li>Приходить вовремя в 9:30</li>
+        <li>Бережно относиться к имуществу</li>
+        <li>Приносить сменную обувь и сменную футболку</li>
+        <li>Уважительно общаться с детьми и педагогами</li>
+        <li>Сообщать педагогам о самочувствии (особенностях здоровья) или чрезвычайных ситуациях</li>
+        <li>Всегда находиться со своей группой и педагогами</li>
+    </ul>
+
+    <div class="warning">
+        ❗️ <strong>Внимание!</strong> Оплатить желательно за 2 недели до начала смены, так как нужно проплатить обеды по договору в кафе.<br>
+        <strong>Успейте записать ребёнка!</strong>
+    </div>
+
+    <h2>📞 Контакты для записи и вопросов</h2>
+    <div class="contact-block" style="background: rgba(0,0,0,0.4); border-radius: 30px; padding: 20px; margin: 20px 0;">
+        📱 Телефон: <strong>+7 (916) 811-96-89</strong><br>
+        📱 Телефон: <strong>+7 (926) 233-13-94</strong><br>
+        💬 Написать / позвонить: <strong>MAX / Telegram</strong>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://t.me/Maria_Semyanskaya" class="btn" target="_blank">📝 Записаться</a>
+    </div>
+
+    <a href="../index.html" class="back-link">← На главную</a>
+</div>
+
+</body>
+</html>
