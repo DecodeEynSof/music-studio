@@ -21,128 +21,201 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 2cm;
+            padding: 0;
         }
 
         .flex-container {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            flex-wrap: nowrap;
             align-items: stretch;
-            gap: 40px;
-            max-width: 2000px;
+            justify-content: center;
+            gap: 2cm;
+            padding: 0 2cm;
             width: 100%;
+            max-width: 100%;
         }
 
-        /* Блок ссылок — без фона */
+        /* БЛОК КНОПОК (левая колонка) */
         .links {
-            flex: 1.2;
-            padding: 20px 0;
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1rem;
+            align-items: flex-start;
+            padding: 0.5rem 0;
+            min-width: 0;
         }
 
-        .links ul {
-            list-style: none;
-        }
-
-        .links li {
-            margin: 25px 0;
-        }
-
-        .links a {
-            color: #000000;
-            text-decoration: none;
-            font-size: 2rem;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-            text-shadow: 1px 1px 0px #ffdd99, 0 0 12px #ffcc33, 0 0 20px rgba(255,200,50,0.6);
+        .link-card {
+            background: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(2px);
+            border-radius: 30px;
+            padding: 12px 24px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
             transition: 0.2s;
             display: inline-block;
+            width: auto;
+            align-self: flex-start;
         }
 
-        .links a:hover {
-            color: #ffcc66;
-            transform: translateX(8px);
-            text-shadow: 0 0 8px #ffaa44;
+        .link-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateX(6px);
         }
 
-        /* Центральная эмблема */
-        .emblem-top {
-            flex: 1.6;
+        .link-card a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            display: block;
+            white-space: nowrap;
+        }
+
+        /* КОЛОНКИ ЭМБЛЕМ (центр и правая) */
+        .emblem-center,
+        .emblem-right {
+            flex: 1 1 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 0.5rem 0;
+            min-width: 0;
         }
 
-        .emblem-top img {
+        /* СРЕДНЯЯ ЭМБЛЕМА - сдвинута вправо на 2 см от кнопок,
+           но между эмблемами остаётся 1 см */
+        .emblem-center {
+            margin-left: 2cm;    /* увеличиваем расстояние от кнопок */
+            margin-right: -1cm;  /* уменьшаем расстояние до правой эмблемы до 1 см */
+        }
+
+        .emblem-center img,
+        .emblem-right img {
             width: 100%;
-            max-width: 1000px;
-            height: auto;
+            height: 100%;
+            object-fit: contain;
+            max-width: 100%;
+            max-height: 100%;
             display: block;
         }
 
-        /* Правая эмблема */
-        .emblem-bottom {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
+        /* Декоративные тени */
+        .emblem-center img {
+            filter: drop-shadow(0 0 20px #ffb6c1) drop-shadow(0 0 45px #ff9eb5);
         }
 
-        .emblem-bottom img {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            display: block;
+        .emblem-right img {
+            filter: drop-shadow(0 0 6px #1e2e66) drop-shadow(0 0 18px #4a2e6e) drop-shadow(0 0 35px #9a4cae);
         }
 
-        @media (max-width: 800px) {
-            body {
-                padding: 1cm;
-            }
-            .flex-container {
-                flex-direction: column;
-                align-items: center;
-                gap: 30px;
-            }
-            .links, .emblem-top, .emblem-bottom {
-                width: 100%;
-                text-align: center;
-            }
-            .links a {
-                font-size: 1.1rem;
-            }
-            .emblem-bottom img {
-                max-width: 180px;
-            }
-        }
+        /* АДАПТИВ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ */
+           @media (max-width: 800px) {
+    .flex-container {
+        display: grid;
+        grid-template-columns: 40% 60%;   /* две колонки: 40% - эмблема2, 60% - эмблема1 */
+        grid-template-rows: auto auto;    /* первая строка - эмблемы, вторая - кнопки */
+        gap: 1rem;
+        padding: 2rem 1rem;
+        align-items: start;
+        justify-items: center;
+    }
+
+    /* Блок кнопок — во второй строке, на всю ширину */
+    .links {
+        grid-column: 1 / 3;               /* занимает обе колонки */
+        grid-row: 2;                      /* вторая строка */
+        display: flex;
+        flex-direction: column;
+        align-items: center;              /* кнопки по центру */
+        gap: 1rem;
+        width: 100%;
+        flex: 0 0 auto;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Эмблема2 — левая колонка, первая строка (40%) */
+    .emblem-center {
+        grid-column: 1;
+        grid-row: 1;
+        margin: 0;                        /* убираем десктопные смещения */
+        padding: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 150px;
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    /* Эмблема1 — правая колонка, первая строка (60%) */
+    .emblem-right {
+        grid-column: 2;
+        grid-row: 1;
+        margin: 0;
+        padding: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 150px;
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    /* Картинки эмблем — заполняют свои контейнеры */
+    .emblem-center img,
+    .emblem-right img {
+        width: 100%;
+        height: 100%;
+        max-height: 250px;                /* ограничиваем высоту */
+        object-fit: contain;
+    }
+
+    /* Кнопки — подгоняем под мобильный размер */
+    .link-card {
+        align-self: center;
+        width: auto;
+    }
+
+    .link-card a {
+        font-size: 1rem;
+        white-space: normal;              /* перенос текста на мобильных */
+    }
+}
+
     </style>
 </head>
 <body>
+
 <div class="flex-container">
 
+    <!-- КНОПКИ (левая колонка) -->
     <div class="links">
-        <ul>
-            <li><a href="biography.html">Биография Марии Алексеевны Семьянской</a></li>
-            <li><a href="school-history.html">История создания музыкальной школы</a></li>
-            <li><a href="svoya-versia.html">Уникальная учебная программа "Своя версия"</a></li>
-            <li><a href="clubs/">Направления школы</a></li>
-            <li><a href="creative-workshop/">Творческая мастерская</a></li>
-            <li><a href="concerts.html">Наша концертная деятельность</a></li>
-            <li><a href="rent.html">Аренда помещения и оборудования</a></li>
-            <li><a href="contacts.html">Адрес и контакты</a></li>
-        </ul>
+        <div class="link-card"><a href="biography.html">Биография Марии Алексеевны Семьянской</a></div>
+        <div class="link-card"><a href="school-history.html">История создания музыкальной школы</a></div>
+        <div class="link-card"><a href="svoya-versia.html">Уникальная учебная программа "Своя версия"</a></div>
+        <div class="link-card"><a href="clubs/">Направления школы</a></div>
+        <div class="link-card"><a href="creative-workshop/">Творческая мастерская</a></div>
+        <div class="link-card"><a href="concerts.html">Наша концертная деятельность</a></div>
+        <div class="link-card"><a href="rent.html">Аренда помещения и оборудования</a></div>
+        <div class="link-card"><a href="contacts.html">Адрес и контакты</a></div>
     </div>
 
-    <div class="emblem-top">
-        <img src="emblems/emblem1.png" alt="Эмблема школы">
-    </div>
-
-    <div class="emblem-bottom">
+    <!-- ЭМБЛЕМА 2 (центр) -->
+    <div class="emblem-center">
         <img src="emblems/emblem2.png" alt="Эмблема дополнительная">
     </div>
 
+    <!-- ЭМБЛЕМА 1 (правая) -->
+    <div class="emblem-right">
+        <img src="emblems/emblem1.png" alt="Эмблема школы">
+    </div>
+
 </div>
+
 </body>
 </html>
